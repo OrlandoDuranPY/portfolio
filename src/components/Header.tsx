@@ -6,16 +6,17 @@ import LinkedInIcon from '../assets/icons/linkedin.svg';
 
 export const Header = () => {
   return (
-    <nav className='w-full bg-gra py-5'>
+    // Vista tablet y desktop
+    <nav className='hidden md:block w-full bg-gra py-5'>
       <div className='container py-5 mx-auto flex justify-between items-center'>
         {/* Logo */}
         <h1 className='text-2xl font-black'>Orlandoduranpy.dev</h1>
 
         {/* Menu */}
         <ul className='flex gap-5 rounded-full'>
-            <CustomLink to="/">Inicio</CustomLink>
-            <CustomLink to="/about">Acerca de mi</CustomLink>
-            <CustomLink to="/works">Mi trabajo</CustomLink>
+            <CustomLink to="/">INICIO</CustomLink>
+            <CustomLink to="/about">ACERCA DE MI</CustomLink>
+            <CustomLink to="/works">MI TRABAJO</CustomLink>
         </ul>
 
         {/* Redes Sociales */}
