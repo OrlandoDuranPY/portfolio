@@ -1,37 +1,107 @@
 import { CustomLink } from './CustomLink';
 // Iconos
-import GithubIcon from '../assets/icons/github.svg';
-import InstagramIcon from '../assets/icons/instagram.svg';
-import LinkedInIcon from '../assets/icons/linkedin.svg';
+// import GithubIcon from '../assets/icons/github.svg';
+// import InstagramIcon from '../assets/icons/instagram.svg';
+// import LinkedInIcon from '../assets/icons/linkedin.svg';
+import GithubIconWhite from '../assets/icons/github-white.svg';
+import InstagramIconWhite from '../assets/icons/instagram-white.svg';
+import LinkedInIconWhite from '../assets/icons/linkedin-white.svg';
+import CloseMenuIcon from '../assets/icons/close-menu.svg';
+import HamburguerMenuIcon from '../assets/icons/hamburguer-menu.svg';
+import { useState } from 'react';
+import { CustomHeaderIconLink } from './CustomHeaderIconLink';
 
 export const Header = () => {
+  /* ========================================
+     = Abrir el menu movil =
+  ========================================= */
+  const [menuOpen, setMenuOpen] = useState(false);
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
-    // Vista tablet y desktop
-    <nav className='hidden md:block w-full bg-gra py-5'>
-      <div className='container py-5 mx-auto flex justify-between items-center'>
-        {/* Logo */}
-        <h1 className='text-2xl font-black'>Orlandoduranpy.dev</h1>
+    <>
+      {/* Vista tablet y desktop */}
+      <nav className='hidden lg:block w-full bg-gra py-5'>
+        <div className='container py-5 mx-auto flex justify-between items-center px-10 bg-white bg-opacity-10 rounded-3xl'>
+          {/* Logo */}
+          <h1 className='text-2xl font-bold text-white font-palanquin'>Orlandoduranpy.dev</h1>
 
-        {/* Menu */}
-        <ul className='flex gap-5 rounded-full'>
-            <CustomLink to="/">INICIO</CustomLink>
-            <CustomLink to="/about">ACERCA DE MI</CustomLink>
-            <CustomLink to="/works">MI TRABAJO</CustomLink>
-        </ul>
+          {/* Menu */}
+          <ul className='flex gap-10 rounded-full font-palanquin'>
+            <CustomLink to='/'>INICIO</CustomLink>
+            <CustomLink to='/about'>ACERCA DE MI</CustomLink>
+            <CustomLink to='/works'>MI TRABAJO</CustomLink>
+            <CustomLink to='/contact'>CONTACTO</CustomLink>
+          </ul>
 
-        {/* Redes Sociales */}
-        <ul className='flex gap-5'>
-            <li>
-                <a href="https://github.com/OrlandoDuranPY/" target='_blank'><img className='h-6' src={GithubIcon} alt="Github" /></a>
-            </li>
-            <li>
-                <a href="https://www.instagram.com/orlandoduranpy.dev/" target='_blank'><img className='h-6' src={InstagramIcon} alt="Instagram" /></a>
-            </li>
-            <li>
-                <a href="https://www.linkedin.com/in/orlandoduranpy/" target='_blank'><img className='h-6' src={LinkedInIcon} alt="Linkedin" /></a>
-            </li>
-        </ul>
+          {/* Redes Sociales */}
+          <ul className='flex gap-5'>
+            <CustomHeaderIconLink
+              whiteIcon={GithubIconWhite}
+              alt='Icono Github'
+              href='https://github.com/OrlandoDuranPY/'
+            />
+            <CustomHeaderIconLink
+              whiteIcon={InstagramIconWhite}
+              alt='Icono Instagram'
+              href='https://www.instagram.com/orlandoduranpy.dev/'
+            />
+            <CustomHeaderIconLink
+              whiteIcon={LinkedInIconWhite}
+              alt='Icono Linkedin'
+              href='https://www.linkedin.com/in/orlandoduranpy/'
+            />
+          </ul>
+        </div>
+      </nav>
+
+      {/* Vista mobile */}
+      <nav className='lg:hidden w-full'>
+        <div className='container py-4 mx-auto flex justify-between items-center px-5'>
+          {/* Logo */}
+          <h1 className='text-xl font-bold text-white'>Orlandoduranpy.dev</h1>
+
+          {/* Menu Button */}
+          <button className='text-white' onClick={toggleMenu}>
+            <img
+              className='h-6'
+              src={HamburguerMenuIcon}
+              alt='Icono Menu de Hamburguesa'
+            />
+          </button>
+        </div>
+      </nav>
+
+      {/* Sliding Menu */}
+      <div
+        className={`fixed inset-0 bg-customBlack2 bg-opacity-95 z-50 transform ${
+          menuOpen ? 'translate-x-0' : 'translate-x-full'
+        } transition-transform duration-300 ease-in-out`}
+      >
+        <div className='flex justify-end p-5'>
+          <button className='text-white' onClick={toggleMenu}>
+            <img className='h-6' src={CloseMenuIcon} alt='Icono cerrar menu' />
+          </button>
+        </div>
+        <div className='flex flex-col items-center justify-center h-full'>
+          <ul className='text-2xl text-center space-y-5 font-palanquin'>
+            <CustomLink to='/' toggleMenu={toggleMenu}>
+              INICIO
+            </CustomLink>
+            <CustomLink to='/about' toggleMenu={toggleMenu}>
+              ACERCA DE MI
+            </CustomLink>
+            <CustomLink to='/works' toggleMenu={toggleMenu}>
+              MI TRABAJO
+            </CustomLink>
+            <CustomLink to='/contact' toggleMenu={toggleMenu}>
+              CONTACTO
+            </CustomLink>
+          </ul>
+        </div>
       </div>
-    </nav>
+    </>
   );
 };

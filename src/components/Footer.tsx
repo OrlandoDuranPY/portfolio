@@ -9,7 +9,7 @@ export const Footer = () => {
   return (
     <>
       {/* Vista tablet y desktop */}
-      <div className='hidden md:block w-full bg-customBlack2 py-10 px-10 lg:px-0'>
+      <div className='hidden md:block w-full bg-customBlack2 py-10 px-5 lg:px-0'>
         <div className='container mx-auto md:flex justify-between items-center'>
           {/* Redes Sociales */}
           <ul className='flex gap-5'>
@@ -31,10 +31,11 @@ export const Footer = () => {
           </ul>
 
           {/* Menu */}
-          <ul className='flex gap-10 rounded-full'>
+          <ul className='flex gap-10 rounded-full font-palanquin'>
             <CustomLink to='/'>INICIO</CustomLink>
             <CustomLink to='/about'>ACERCA DE MI</CustomLink>
             <CustomLink to='/works'>MI TRABAJO</CustomLink>
+            <CustomLink to='/contact'>CONTACTO</CustomLink>
           </ul>
         </div>
         <div className='border border-t border-white border-opacity-20 container m-auto mt-10'></div>
@@ -46,31 +47,43 @@ export const Footer = () => {
       </div>
 
       {/* Vista movil */}
-      <div className='block md:hidden w-full bg-customBlack2 py-10 px-10 lg:px-0'>
-        <div className='container mx-auto flex flex-col items-center'>
+      <div className='block md:hidden w-full bg-customBlack2 py-10 px-5 lg:px-0'>
+        <div className='container mx-auto flex justify-between items-center'>
+          {/* Logo y Redes Sociales */}
+          <div className='flex flex-col gap-5'>
+          <h1 className='font-bold text-white font-palanquin opacity-50'>Orlandoduranpy.dev</h1>
+            <ul className='flex gap-5'>
+              <CustomIconLink
+                href='https://github.com/OrlandoDuranPY/'
+                icon={GithubIcon}
+                alt='Enlace a Github'
+              />
+              <CustomIconLink
+                href='https://www.instagram.com/orlandoduranpy.dev/'
+                icon={InstagramIcon}
+                alt='Enlace a Instagram'
+              />
+              <CustomIconLink
+                href='https://www.linkedin.com/in/orlandoduranpy/'
+                icon={LinkedInIcon}
+                alt='Enlace a Linkedin'
+              />
+            </ul>
+          </div>
           {/* Menu */}
-          <ul className='flex gap-10 rounded-full mb-10'>
-            <CustomLink textSmall to='/'>INICIO</CustomLink>
-            <CustomLink textSmall to='/about'>ACERCA DE MI</CustomLink>
-            <CustomLink textSmall to='/works'>MI TRABAJO</CustomLink>
-          </ul>
-          {/* Redes Sociales */}
-          <ul className='flex gap-5'>
-            <CustomIconLink
-              href='https://github.com/OrlandoDuranPY/'
-              icon={GithubIcon}
-              alt='Enlace a Github'
-            />
-            <CustomIconLink
-              href='https://www.instagram.com/orlandoduranpy.dev/'
-              icon={InstagramIcon}
-              alt='Enlace a Instagram'
-            />
-            <CustomIconLink
-              href='https://www.linkedin.com/in/orlandoduranpy/'
-              icon={LinkedInIcon}
-              alt='Enlace a Linkedin'
-            />
+          <ul className='flex gap-5 rounded-full font-palanquin flex-col text-right'>
+            <CustomLink textSmall to='/'>
+              INICIO
+            </CustomLink>
+            <CustomLink textSmall to='/about'>
+              ACERCA DE MI
+            </CustomLink>
+            <CustomLink textSmall to='/works'>
+              MI TRABAJO
+            </CustomLink>
+            <CustomLink textSmall to='/contact'>
+              CONTACTO
+            </CustomLink>
           </ul>
         </div>
         <div className='border border-t border-white border-opacity-20 container m-auto mt-10'></div>

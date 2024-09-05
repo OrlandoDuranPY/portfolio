@@ -1,5 +1,5 @@
 export const About = () => {
   return (
-    <div>About</div>
+    <div className='text-white'>About</div>
   )
 };
