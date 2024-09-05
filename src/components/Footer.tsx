@@ -9,7 +9,7 @@ export const Footer = () => {
   return (
     <>
       {/* Vista tablet y desktop */}
-      <div className='hidden md:block w-full bg-customBlack2 py-10 px-5 lg:px-0'>
+      <div className='hidden md:block w-full bg-customBlack2 py-10 px-10 lg:px-0'>
         <div className='container mx-auto md:flex justify-between items-center'>
           {/* Redes Sociales */}
           <ul className='flex gap-5'>
@@ -41,13 +41,13 @@ export const Footer = () => {
         <div className='border border-t border-white border-opacity-20 container m-auto mt-10'></div>
         {/* Derechos */}
         <p className='text-center text-sm mt-10 text-white text-opacity-50'>
-          &copy; 2024 @orlandoduranpy.dev, Todos los derechos reservados
+          &copy; 2024 @orlandoduranpy
         </p>
         {/* Redes sociales */}
       </div>
 
       {/* Vista movil */}
-      <div className='block md:hidden w-full bg-customBlack2 py-10 px-5 lg:px-0'>
+      <div className='block md:hidden w-full bg-customBlack2 py-10 px-8 lg:px-0'>
         <div className='container mx-auto flex justify-between items-center'>
           {/* Logo y Redes Sociales */}
           <div className='flex flex-col gap-5'>

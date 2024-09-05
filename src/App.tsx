@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { Layout } from './components/Layouts/Layout';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
@@ -12,12 +12,20 @@ export const App = () => {
     <Router>
       <Layout>
         <Header />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/works' element={<Works />} />
-          <Route path='/contact' element={<Contact />} />
-        </Routes>
+        <main>
+        <section className='min-h-screen flex items-center justify-center' id='home'>
+            <Home />
+          </section>
+          <section id='about' className='bg-customBlack2 py-14'>
+            <About />
+          </section>
+          <section id='works'>
+            <Works />
+          </section>
+          <section id='contact'>
+            <Contact />
+          </section>
+        </main>
         <Footer />
       </Layout>
     </Router>

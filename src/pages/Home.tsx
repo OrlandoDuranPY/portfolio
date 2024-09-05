@@ -7,9 +7,13 @@ import LinkedInIconWhite from '../assets/icons/linkedin-white.svg';
 
 export const Home = () => {
   return (
-    <section className='container mx-auto py-14 px-5 lg:px-0'>
-      <div className='w-full h-full flex flex-col lg:flex-row-reverse gap-5 lg:justify-center lg:items-center'>
-        <img className='w-full lg:w-2/5' src={AvatarBlob} alt='Usuario de prueba' />
+    <div className='container mx-auto py-14 lg:py-0 px-8 lg:px-0'>
+      <div className='w-full flex flex-col lg:flex-row-reverse gap-5 lg:justify-center lg:items-center'>
+        <img
+          className='w-full lg:w-2/5'
+          src={AvatarBlob}
+          alt='Usuario de prueba'
+        />
         {/* Redes Sociales */}
         <ul className='flex gap-5 lg:hidden'>
           <CustomHeaderIconLink
@@ -33,13 +37,13 @@ export const Home = () => {
             ¡Hola, soy <span className='text-fuccia'>Orlando</span>! 👋
           </h1>
           <p className='text-white opacity-80 lg:w-4/6'>
-            Desarrollador web con 3 años de experiencia en crear
-            aplicaciones dinámicas usando Laravel, TailwindCSS, Livewire, JavaScript y
-            más. Me encanta encontrar soluciones creativas y eficientes para
-            cada proyecto.
+            Desarrollador web con 3 años de experiencia en crear aplicaciones
+            dinámicas usando Laravel, TailwindCSS, Livewire, JavaScript y más.
+            Me encanta encontrar soluciones creativas y eficientes para cada
+            proyecto.
           </p>
         </div>
       </div>
-    </section>
+    </div>
   );
 };

@@ -1,39 +1,57 @@
+import { useEffect, useState } from 'react';
 import { CustomLink } from './CustomLink';
-// Iconos
-// import GithubIcon from '../assets/icons/github.svg';
-// import InstagramIcon from '../assets/icons/instagram.svg';
-// import LinkedInIcon from '../assets/icons/linkedin.svg';
+import { CustomHeaderIconLink } from './CustomHeaderIconLink';
 import GithubIconWhite from '../assets/icons/github-white.svg';
 import InstagramIconWhite from '../assets/icons/instagram-white.svg';
 import LinkedInIconWhite from '../assets/icons/linkedin-white.svg';
 import CloseMenuIcon from '../assets/icons/close-menu.svg';
 import HamburguerMenuIcon from '../assets/icons/hamburguer-menu.svg';
-import { useState } from 'react';
-import { CustomHeaderIconLink } from './CustomHeaderIconLink';
 
 export const Header = () => {
-  /* ========================================
-     = Abrir el menu movil =
-  ========================================= */
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  /* ========================================
+     = Abrir o cerrar menu =
+  ========================================= */
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
+  /* ========================================
+     = Manejar scroll =
+  ========================================= */
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <>
       {/* Vista tablet y desktop */}
-      <nav className='hidden lg:block w-full bg-gra py-5'>
-        <div className='container py-5 mx-auto flex justify-between items-center px-10 bg-white bg-opacity-10 rounded-3xl'>
+      <nav className='hidden lg:block w-full bg-gra py-5 fixed z-50 transition-all'>
+        <div className={`container py-5 mx-auto flex justify-between items-center px-8 ${isScrolled ? 'bg-customBlack2' : 'bg-white bg-opacity-10'}  rounded-3xl`}>
           {/* Logo */}
-          <h1 className='text-2xl font-bold text-white font-palanquin'>Orlandoduranpy.dev</h1>
+          <h1 className='text-2xl font-bold text-white font-palanquin'>
+            Orlandoduranpy.dev
+          </h1>
 
           {/* Menu */}
           <ul className='flex gap-10 rounded-full font-palanquin'>
-            <CustomLink to='/'>INICIO</CustomLink>
-            <CustomLink to='/about'>ACERCA DE MI</CustomLink>
-            <CustomLink to='/works'>MI TRABAJO</CustomLink>
-            <CustomLink to='/contact'>CONTACTO</CustomLink>
+            <CustomLink to='#home'>INICIO</CustomLink>
+            <CustomLink to='#about'>ACERCA DE MI</CustomLink>
+            <CustomLink to='#works'>MI TRABAJO</CustomLink>
+            <CustomLink to='#contact'>CONTACTO</CustomLink>
           </ul>
 
           {/* Redes Sociales */}
@@ -58,8 +76,8 @@ export const Header = () => {
       </nav>
 
       {/* Vista mobile */}
-      <nav className='lg:hidden w-full'>
-        <div className='container py-4 mx-auto flex justify-between items-center px-5'>
+      <nav className='lg:hidden w-full fixed'>
+        <div className='container py-4 mx-auto flex justify-between items-center px-8'>
           {/* Logo */}
           <h1 className='text-xl font-bold text-white'>Orlandoduranpy.dev</h1>
 
@@ -87,16 +105,16 @@ export const Header = () => {
         </div>
         <div className='flex flex-col items-center justify-center h-full'>
           <ul className='text-2xl text-center space-y-5 font-palanquin'>
-            <CustomLink to='/' toggleMenu={toggleMenu}>
+            <CustomLink to='#home' toggleMenu={toggleMenu}>
               INICIO
             </CustomLink>
-            <CustomLink to='/about' toggleMenu={toggleMenu}>
+            <CustomLink to='#about' toggleMenu={toggleMenu}>
               ACERCA DE MI
             </CustomLink>
-            <CustomLink to='/works' toggleMenu={toggleMenu}>
+            <CustomLink to='#works' toggleMenu={toggleMenu}>
               MI TRABAJO
             </CustomLink>
-            <CustomLink to='/contact' toggleMenu={toggleMenu}>
+            <CustomLink to='#contact' toggleMenu={toggleMenu}>
               CONTACTO
             </CustomLink>
           </ul>
