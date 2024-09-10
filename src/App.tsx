@@ -6,6 +6,8 @@ import { Works } from './pages/Works';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { Contact } from './pages/Contact';
+import { Experience } from './pages/Experience';
+import './App.css';
 
 export const App = () => {
   return (
@@ -16,8 +18,11 @@ export const App = () => {
         <section className='min-h-screen flex items-center justify-center' id='home'>
             <Home />
           </section>
-          <section id='about' className='bg-customBlack2 py-14'>
+          <section id='about' className='bg-customBlack2 py-20 mb-20 lg:mb-40'>
             <About />
+          </section>
+          <section id='experience' className='mb-40'>
+            <Experience />
           </section>
           <section id='works'>
             <Works />
