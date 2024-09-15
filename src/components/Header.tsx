@@ -39,15 +39,15 @@ export const Header = () => {
   return (
     <>
       {/* Vista tablet y desktop */}
-      <nav className='hidden lg:block w-full bg-gra py-5 fixed z-50 transition-all'>
+      <nav className='hidden lg:block w-full py-5 fixed z-50 transition-all'>
         <div className={`container py-5 mx-auto flex justify-between items-center px-8 ${isScrolled ? 'bg-customBlack2' : 'bg-white bg-opacity-10'}  rounded-3xl`}>
           {/* Logo */}
-          <h1 className='text-2xl font-bold text-white font-palanquin'>
+          <a href='/' className='text-2xl font-bold text-white font-jost'>
             Orlandoduranpy.dev
-          </h1>
+          </a>
 
           {/* Menu */}
-          <ul className='flex gap-10 rounded-full font-palanquin'>
+          <ul className='flex gap-10 rounded-full font-jost'>
             <CustomLink to='#home'>INICIO</CustomLink>
             <CustomLink to='#about'>ACERCA DE MI</CustomLink>
             <CustomLink to='#works'>MI TRABAJO</CustomLink>
@@ -104,7 +104,7 @@ export const Header = () => {
           </button>
         </div>
         <div className='flex flex-col items-center justify-center h-full'>
-          <ul className='text-2xl text-center space-y-5 font-palanquin'>
+          <ul className='text-2xl text-center space-y-5 font-jost'>
             <CustomLink to='#home' toggleMenu={toggleMenu}>
               INICIO
             </CustomLink>

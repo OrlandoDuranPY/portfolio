@@ -5,7 +5,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
   const [showScrollButton, setShowScrollButton] = useState(false);
 
   /* ========================================
-     = Manedar el scrolll =
+     = Manedar el scroll =
   ========================================= */
   useEffect(() => {
     const handleScroll = () => {
@@ -25,17 +25,18 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
   return (
     <>
       <main>{children}</main>
-      {showScrollButton && (
-        <button
-          onClick={scrollToTop}
-          className='fixed bottom-5 right-5 p-3 bg-fuccia text-white rounded-full shadow-lg lg:hidden'
-        >
-          <img className='h-6' src={ArrowUpIcon} alt='Icono flecha arriba' />
-        </button>
-      )}
+      <button
+        onClick={scrollToTop}
+        className={`fixed bottom-5 right-5 p-3 bg-fuccia text-white rounded-full shadow-lg transition-opacity duration-300 ease-in-out ${
+          showScrollButton ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
+      >
+        <img className='h-6' src={ArrowUpIcon} alt='Icono flecha arriba' />
+      </button>
     </>
   );
 };

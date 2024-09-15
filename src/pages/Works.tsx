@@ -1,5 +1,10 @@
+import { Container } from '../components/Layouts/Container';
+import { SectionTitle } from '../components/Layouts/SectionTitle';
+
 export const Works = () => {
   return (
-    <div className='text-white'>Works</div>
-  )
+    <Container>
+      <SectionTitle>Mi trabajo</SectionTitle>
+    </Container>
+  );
 };

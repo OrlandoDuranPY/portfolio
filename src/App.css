@@ -15,3 +15,17 @@
   animation: wave 2s infinite;
   transform-origin: 70% 70%;
 }
+
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-item {
+  padding: 0 10px; /* Ajusta el valor según la separación deseada */
+}
+
+.carousel-item img {
+  display: block;
+  margin: 0 auto;
+}

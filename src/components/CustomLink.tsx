@@ -7,7 +7,12 @@ type LinkProps = {
   toggleMenu?: () => void;
 };
 
-export const CustomLink = ({ to, children, textSmall = false, toggleMenu }: LinkProps) => {
+export const CustomLink = ({
+  to,
+  children,
+  textSmall = false,
+  toggleMenu,
+}: LinkProps) => {
   const location = useLocation();
   const isActive = location.pathname === to;
 
@@ -18,8 +23,14 @@ export const CustomLink = ({ to, children, textSmall = false, toggleMenu }: Link
   };
 
   return (
-    <li className={`text-white font-semibold hover:scale-105 transition-all ${isActive ? 'text-customFuccia2' : ''} ${textSmall ? 'text-sm' : ''}`}>
-      <a href={to} onClick={handleClick}>{children}</a>
+    <li
+      className={`text-white font-semibold hover:text-fuccia2 transition-all ${
+        isActive ? 'text-customFuccia2' : ''
+      } ${textSmall ? 'text-sm' : ''}`}
+    >
+      <a href={to} onClick={handleClick}>
+        {children}
+      </a>
     </li>
   );
 };

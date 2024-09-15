@@ -11,8 +11,8 @@ export default {
         fuccia2: '#ff477e',
       },
       fontFamily: {
-        gloria: ['Gloria Hallelujah', 'cursive', 'sans-serif'],
-        jost: ['Jost', 'sans-serif'],
+        jost: ['Jost', 'sans-serif'], // Fuente principal
+        gloria: ['Gloria Hallelujah', 'cursive', 'sans-serif'], // Fuente secundaria
       },
     },
   },

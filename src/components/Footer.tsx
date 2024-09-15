@@ -10,6 +10,7 @@ export const Footer = () => {
     <>
       {/* Vista tablet y desktop */}
       <div className='hidden md:block w-full bg-customBlack2 py-10 px-10 lg:px-0'>
+      {/* <div className='hidden md:block w-full bg-customBlack2 py-10 px-10 lg:px-0'> */}
         <div className='container mx-auto md:flex justify-between items-center'>
           {/* Redes Sociales */}
           <ul className='flex gap-5'>
@@ -31,7 +32,7 @@ export const Footer = () => {
           </ul>
 
           {/* Menu */}
-          <ul className='flex gap-10 rounded-full font-palanquin'>
+          <ul className='flex gap-10 rounded-full font-jost'>
             <CustomLink to='/'>INICIO</CustomLink>
             <CustomLink to='/about'>ACERCA DE MI</CustomLink>
             <CustomLink to='/works'>MI TRABAJO</CustomLink>
@@ -51,7 +52,6 @@ export const Footer = () => {
         <div className='container mx-auto flex justify-between items-center'>
           {/* Logo y Redes Sociales */}
           <div className='flex flex-col gap-5'>
-          <h1 className='font-bold text-white font-palanquin opacity-50'>Orlandoduranpy.dev</h1>
             <ul className='flex gap-5'>
               <CustomIconLink
                 href='https://github.com/OrlandoDuranPY/'
@@ -71,7 +71,7 @@ export const Footer = () => {
             </ul>
           </div>
           {/* Menu */}
-          <ul className='flex gap-5 rounded-full font-palanquin flex-col text-right'>
+          <ul className='flex gap-5 rounded-full font-jost flex-col text-right'>
             <CustomLink textSmall to='/'>
               INICIO
             </CustomLink>
