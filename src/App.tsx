@@ -25,10 +25,10 @@ export const App = () => {
           <section id='about' className='bg-customBlack2 py-20 mb-20 lg:mb-40'>
             <About />
           </section>
-          <section id='experience' className='mb-40'>
+          <section id='experience' className='mb-20 lg:mb-40'>
             <Experience />
           </section>
-          <section id='works'>
+          <section id='works' className='py-10 mb-20 lg:mb-40'>
             <Works />
           </section>
           <section id='techs' className='py-10 mb-20 lg:mb-40'>
